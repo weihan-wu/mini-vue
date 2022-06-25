@@ -1,3 +1,6 @@
+/**
+ * 渲染模块：h() mount() patch()
+ */
 const h = (tag, props, children) => {
   return {
     tag, props, children
