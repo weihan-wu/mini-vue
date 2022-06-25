@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="./render.js"></script>
+  <script>
+    // 1、通过渲染函数来创建一个vnode
+    const vnode = h('div', { class: 'title' },
+      [
+        h('h2', null, 'HelloWorld'),
+        h('button', { onClick: () => { console.log('++') } }, '+')
+      ])
+
+    console.log(vnode);
+
+    // 2、将vnode挂载到页面上
+    mount(vnode, document.querySelector('#app'))
+
+    // 3、创建新的vnode
+    const vnode1 = h('div', { class: 'wuwh' },
+      [
+        h('h2', null, 'HelloWorld')
+      ])
+
+    patch(vnode, vnode1)
+  </script>
+</body>
+
+</html>
