@@ -76,13 +76,14 @@ const patch = (vnode1, vnode2) => {
 
     // 2.2、移除旧的props
     for (const key in oldProps) {
+      // 每一个绑定的函数都是一个新的函数，因此直接将旧的函数移除
+      if (key.startsWith('on')) {
+        const value = oldProps[key]
+        el.removeEventListener(key.slice(2).toLowerCase(), value)
+      }
       // 当旧的key不存在于新的props中，从元素上移除旧的props
       if (!(key in newProps)) {
-        if (key.startsWith('on')) {
-          el.removeEventListener(key.slice(2).toLowerCase())
-        } else {
-          el.removeAttribute(key)
-        }
+        el.removeAttribute(key)
       }
     }
 

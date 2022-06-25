@@ -113,31 +113,31 @@ function reactive(obj) {
 
 
 
-// 测试数据
-const info = reactive({
-  counter: 100,
-  name: "wuwh"
-})
-const square = reactive({
-    height: 50
-})
+// // 测试数据
+// const info = reactive({
+//   counter: 100,
+//   name: "wuwh"
+// })
+// const square = reactive({
+//     height: 50
+// })
 
-// 测试代码
+// // 测试代码
 
-watchEffect(function () {
-  console.log('Effect1:', info.counter * 2);
-})
+// watchEffect(function () {
+//   console.log('Effect1:', info.counter * 2);
+// })
 
-watchEffect(function () {
-  console.log('Effect2:', info.counter * info.counter, info.name);
-})
+// watchEffect(function () {
+//   console.log('Effect2:', info.counter * info.counter, info.name);
+// })
 
-watchEffect(function () {
-  console.log('Effect3:', square.height);
-})
+// watchEffect(function () {
+//   console.log('Effect3:', square.height);
+// })
 
-console.log('改变对象中属性');
+// console.log('改变对象中属性');
 
-// info.counter++
-info.name = 'wwh'
-square.height = '70'
+// // info.counter++
+// info.name = 'wwh'
+// square.height = '70'
